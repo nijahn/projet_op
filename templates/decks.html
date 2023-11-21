@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deck List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Decks</h1>
+    <a href="{{ url_for('add_deck_route') }}">Add New Deck</a>
+    <ul>
+        {% for deck in decks %}
+        <li>{{ deck.nom }} - {{ deck.couleurs }} - {{ deck.leader }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
